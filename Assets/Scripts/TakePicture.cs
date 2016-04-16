@@ -21,12 +21,16 @@ public class TakePicture : MonoBehaviour {
 
 	public int filmUsed = -1;
 
+	public UnityEngine.UI.Text filmUsedText;
+
+
 	public void takePicture() {
 		if(unlocked && animalInShot && filmUsed < pictureFrames.Length - 1) {
 			
 			StartCoroutine(TakeSnapshot(Screen.width,Screen.height));
 
 			filmUsed++;
+			filmUsedText.text = "Photos remaining: " + (10 - filmUsed).ToString();
 			StartCoroutine(Wait());
 		}
 

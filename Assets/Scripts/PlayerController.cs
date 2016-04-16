@@ -20,29 +20,21 @@ public class PlayerController : MonoBehaviour {
 	
 	public bool isOnSafari = true;
 
-	public TextMesh d;
-
-	void Start() {
-
-
-	}
-
 	// Update is called once per frame
 	void Update () {
 
 		isOnSafari = Application.loadedLevelName.Equals("PictureAnalysis") ? false : true;
-		d.text = cameraSelected.ToString();
 
 		if(!isOnSafari)
 			pictureAnalysisSetup();
 
-		if(Input.GetButtonUp("Fire1")) {
+		if(Cardboard.SDK.Triggered) {
 			if(cameraSelected && isOnSafari)
 				takePicture.takePicture();
-			else if(canShootDart && isOnSafari)
+			else if(canShootDart && isOnSafari) {
 				dartController.createProjectile();
-			else if(1==1)
-				Debug.Log("as");
+			}
+
 		}
 			
 	}
@@ -52,7 +44,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void changeWeapons() {
-
 		switchWeaponText.text = cameraSelected ? "Camera" : "Tranq Gun";
 		cameraSelected  = cameraSelected ? false : true;
 	}
@@ -64,5 +55,6 @@ public class PlayerController : MonoBehaviour {
 	public void pictureAnalysisSetup() {
 		transform.position = new Vector3(0,0,0);
 		transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
+		GetComponent<Rigidbody>().useGravity = false;
 	}
 }
