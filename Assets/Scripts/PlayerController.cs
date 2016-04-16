@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
 	
 	public bool isOnSafari = true;
 
+	public TextMesh d;
+
 	void Start() {
 
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 
 		isOnSafari = Application.loadedLevelName.Equals("PictureAnalysis") ? false : true;
+		d.text = cameraSelected.ToString();
 
 		if(!isOnSafari)
 			pictureAnalysisSetup();
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void changeWeapons() {
+
 		switchWeaponText.text = cameraSelected ? "Camera" : "Tranq Gun";
 		cameraSelected  = cameraSelected ? false : true;
 	}

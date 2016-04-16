@@ -1,0 +1,225 @@
+fileFormatVersion: 2
+guid: bd7a8324374eac54e819066d8ed041a9
+timeCreated: 1460504003
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Armature_001
+    100004: Base
+    100006: Base_0
+    100008: Bum
+    100010: Bum_0
+    100012: Chest
+    100014: Chest_0
+    100016: Cylinder_001
+    100018: Ear_L
+    100020: Ear_L_0
+    100022: Foot_L
+    100024: Foot_L_0
+    100026: Foot_R
+    100028: Foot_R_0
+    100030: //RootNode
+    100032: Giraffe
+    100034: Hand_L
+    100036: Hand_L_0
+    100038: Hand_R
+    100040: Hand_R_0
+    100042: Head
+    100044: Head_0
+    100046: IK_Foot_L
+    100048: IK_Foot_L_0
+    100050: IK_Foot_R
+    100052: IK_Foot_R_0
+    100054: IK_Hand_L
+    100056: IK_Hand_L_0
+    100058: IK_Hand_R
+    100060: IK_Hand_R_0
+    100062: LowerArm_L
+    100064: LowerArm_L_0
+    100066: LowerArm_R
+    100068: LowerArm_R_0
+    100070: LowerLeg_L
+    100072: LowerLeg_L_0
+    100074: LowerLeg_R
+    100076: LowerLeg_R_0
+    100078: Mouth
+    100080: Mouth_0
+    100082: Neck_001
+    100084: Neck_002
+    100086: Neck_003
+    100088: Neck_004
+    100090: Neck_2
+    100092: Neck_3
+    100094: Neck_4
+    100096: Neck_5
+    100098: Root
+    100100: Root_0
+    100102: Stomach
+    100104: Stomach_0
+    100106: Tail_001
+    100108: Tail_002
+    100110: Tail_003
+    100112: Tail_004
+    100114: Tail_2
+    100116: Tail_3
+    100118: Tail_4
+    100120: Tail_5
+    100122: UpperArm_L
+    100124: UpperArm_L_0
+    100126: UpperArm_R
+    100128: UpperArm_R_0
+    100130: UpperLeg1_L
+    100132: UpperLeg1_L_0
+    100134: UpperLeg1_R
+    100136: UpperLeg1_R_0
+    100138: UpperLeg2_L
+    100140: UpperLeg2_L_0
+    100142: UpperLeg2_R
+    100144: UpperLeg2_R_0
+    400000: Armature
+    400002: Armature_001
+    400004: Base
+    400006: Base_0
+    400008: Bum
+    400010: Bum_0
+    400012: Chest
+    400014: Chest_0
+    400016: Cylinder_001
+    400018: Ear_L
+    400020: Ear_L_0
+    400022: Foot_L
+    400024: Foot_L_0
+    400026: Foot_R
+    400028: Foot_R_0
+    400030: //RootNode
+    400032: Giraffe
+    400034: Hand_L
+    400036: Hand_L_0
+    400038: Hand_R
+    400040: Hand_R_0
+    400042: Head
+    400044: Head_0
+    400046: IK_Foot_L
+    400048: IK_Foot_L_0
+    400050: IK_Foot_R
+    400052: IK_Foot_R_0
+    400054: IK_Hand_L
+    400056: IK_Hand_L_0
+    400058: IK_Hand_R
+    400060: IK_Hand_R_0
+    400062: LowerArm_L
+    400064: LowerArm_L_0
+    400066: LowerArm_R
+    400068: LowerArm_R_0
+    400070: LowerLeg_L
+    400072: LowerLeg_L_0
+    400074: LowerLeg_R
+    400076: LowerLeg_R_0
+    400078: Mouth
+    400080: Mouth_0
+    400082: Neck_001
+    400084: Neck_002
+    400086: Neck_003
+    400088: Neck_004
+    400090: Neck_2
+    400092: Neck_3
+    400094: Neck_4
+    400096: Neck_5
+    400098: Root
+    400100: Root_0
+    400102: Stomach
+    400104: Stomach_0
+    400106: Tail_001
+    400108: Tail_002
+    400110: Tail_003
+    400112: Tail_004
+    400114: Tail_2
+    400116: Tail_3
+    400118: Tail_4
+    400120: Tail_5
+    400122: UpperArm_L
+    400124: UpperArm_L_0
+    400126: UpperArm_R
+    400128: UpperArm_R_0
+    400130: UpperLeg1_L
+    400132: UpperLeg1_L_0
+    400134: UpperLeg1_R
+    400136: UpperLeg1_R_0
+    400138: UpperLeg2_L
+    400140: UpperLeg2_L_0
+    400142: UpperLeg2_R
+    400144: UpperLeg2_R_0
+    4300000: Cylinder_001
+    4300002: Giraffe
+    7400000: Default Take
+    7400002: Eating
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Cylinder_001
+    13700002: Giraffe
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
