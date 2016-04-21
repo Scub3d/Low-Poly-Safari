@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 
 	public bool cameraSelected = true;
 	
-	public int points = 0;
+	public float points = 0;
 
 	public bool canShootDart = true;
 

@@ -29,7 +29,24 @@ public class TakePicture : MonoBehaviour {
 			
 			StartCoroutine(TakeSnapshot(Screen.width,Screen.height));
 
-			filmUsed++;
+            GameObject animal = GameObject.Find(animalName);
+
+            float distance = Vector3.Distance(animal.transform.position, player.transform.position);
+            Debug.Log(distance);
+
+            // apply points
+
+            float multiplier = 1f;
+
+            if (distance > 16f && distance < 30f)
+                multiplier = .5f;
+            else if (distance >= 30f)
+                multiplier = .2f;
+
+            playerController.points += animal.GetComponent<AnimalController>().pictureScore * multiplier;
+
+
+            filmUsed++;
 			filmUsedText.text = "Photos remaining: " + (10 - filmUsed).ToString();
 			StartCoroutine(Wait());
 		}
