@@ -51,7 +51,7 @@ public class TakePicture : MonoBehaviour {
             scoreText.text = "Score: " + playerController.points.ToString() + " Points";
 
             filmUsed++;
-			filmUsedText.text = "Photos remaining: " + (10 - filmUsed).ToString();
+			filmUsedText.text = "Photos remaining: " + (9 - filmUsed).ToString();
 			StartCoroutine(Wait());
 		}
 
