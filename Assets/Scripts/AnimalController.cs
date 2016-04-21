@@ -20,20 +20,24 @@ public class AnimalController : MonoBehaviour {
     public GameObject player;
 
     public Animation anim;
-	
+
+    public int test = 1;
+
 	// Update is called once per frame
 	void Update () {
 
         if (!isPassive) {
             distance = Vector3.Distance(transform.position, player.transform.position);
+
             if (distance <= 16f)
                 switchToRunning();
 
-            if (distance < 4f)
+           if (distance < 4f)
                 switchToPounce();
 
-
-
+           if (distance < 2f)
+                attackPerson();
+       
             if (isRunning || isAttacking)
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 4 * Time.deltaTime);
@@ -42,8 +46,7 @@ public class AnimalController : MonoBehaviour {
             
        
 
-            if (timesShot >= 3)
-                isPassive = true;
+            
         }
        
     }
@@ -65,8 +68,7 @@ public class AnimalController : MonoBehaviour {
         isAttacking = false;
     }
 
-    public void lookAtPlayer()
-    {
+    public void lookAtPlayer() {
         Vector3 targetDir = player.transform.position - transform.position;
         float step = 2 * Time.deltaTime;
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
@@ -79,4 +81,50 @@ public class AnimalController : MonoBehaviour {
         isAttacking = true;
         isIdle = false;
     }
+
+    public void hitWithTranq()  {
+        timesShot++;
+        if (timesShot >= 3)
+            switchToPassive();
+        else
+        {
+            switchToIdle();
+            StartCoroutine(setToPassiveFor10());
+        }
+    }
+
+    public void attackPerson()
+    {
+        player.transform.position -= Vector3.back * 5f;
+        StartCoroutine(setToPassiveFor10());
+        switchToIdle();
+        playerController.loseShot();
+    }
+
+    public void switchToIdle()
+    {
+        isIdle = true;       
+        anim.playAutomatically = false;
+        anim.Stop();
+        isRunning = false;
+        isAttacking = false;
+    }
+    
+    public void switchToPassive()
+    {
+        isPassive = true;
+        isIdle = true;
+        anim.playAutomatically = false;
+        anim.Stop();
+        isRunning = false;
+        isAttacking = false;
+    }
+ 
+    IEnumerator setToPassiveFor10() {
+        isPassive = true;
+        yield return new WaitForSeconds(10f);
+        isPassive = false;
+    }
+
+
 }

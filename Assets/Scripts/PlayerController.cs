@@ -57,4 +57,10 @@ public class PlayerController : MonoBehaviour {
 		transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
 		GetComponent<Rigidbody>().useGravity = false;
 	}
+
+    public void loseShot()
+    {
+        takePicture.filmUsed++;
+    }
+
 }
