@@ -22,9 +22,12 @@ public class TakePicture : MonoBehaviour {
 	public int filmUsed = -1;
 
 	public UnityEngine.UI.Text filmUsedText;
+    public UnityEngine.UI.Text scoreText;
+
+    public SendPictureToServer spts;
 
 
-	public void takePicture() {
+    public void takePicture() {
 		if(unlocked && animalInShot && filmUsed < pictureFrames.Length - 1) {
 			
 			StartCoroutine(TakeSnapshot(Screen.width,Screen.height));
@@ -45,6 +48,7 @@ public class TakePicture : MonoBehaviour {
 
             playerController.points += animal.GetComponent<AnimalController>().pictureScore * multiplier;
 
+            scoreText.text = "Score: " + playerController.points.ToString() + " Points";
 
             filmUsed++;
 			filmUsedText.text = "Photos remaining: " + (10 - filmUsed).ToString();
@@ -76,6 +80,8 @@ public class TakePicture : MonoBehaviour {
 
 		texture.Apply(); 
 		pictureFrames[filmUsed].GetComponent<Renderer>().material.mainTexture = texture;
+        spts.selectedPicture = pictureFrames[filmUsed];
+        spts.breakShit();
 	} 
 
 

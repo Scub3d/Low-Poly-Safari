@@ -21,8 +21,6 @@ public class AnimalController : MonoBehaviour {
 
     public Animation anim;
 
-    public int test = 1;
-
 	// Update is called once per frame
 	void Update () {
 
