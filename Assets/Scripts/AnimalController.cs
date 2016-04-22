@@ -64,6 +64,8 @@ public class AnimalController : MonoBehaviour {
         anim.Play("ContinueRunning");
         isRunning = true;
         isAttacking = false;
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+
     }
 
     public void lookAtPlayer() {
@@ -106,6 +108,7 @@ public class AnimalController : MonoBehaviour {
         anim.Stop();
         isRunning = false;
         isAttacking = false;
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
     }
     
     public void switchToPassive()

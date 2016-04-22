@@ -51,14 +51,24 @@ public class TakePicture : MonoBehaviour {
             scoreText.text = "Score: " + playerController.points.ToString() + " Points";
 
             filmUsed++;
-			filmUsedText.text = "Photos remaining: " + (9 - filmUsed).ToString();
-			StartCoroutine(Wait());
+            updateFilmText();
+            StartCoroutine(Wait());
 		}
 
 		if(filmUsed >= pictureFrames.Length - 1)
 			StartCoroutine(EndScene());
 
 	}
+
+    public void updateFilmText()
+    {
+        filmUsedText.text = "Photos remaining: " + (9 - filmUsed).ToString();
+    }
+
+    public void ruinFilm()
+    {
+        pictureFrames[filmUsed].tag = "ruined";
+    }
 
 	IEnumerator Wait()	{
 		unlocked = false;
@@ -80,8 +90,8 @@ public class TakePicture : MonoBehaviour {
 
 		texture.Apply(); 
 		pictureFrames[filmUsed].GetComponent<Renderer>().material.mainTexture = texture;
-        spts.selectedPicture = pictureFrames[filmUsed];
-        spts.breakShit();
+        //spts.selectedPicture = pictureFrames[filmUsed];
+       // spts.breakShit();
 	} 
 
 

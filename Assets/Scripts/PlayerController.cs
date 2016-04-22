@@ -19,13 +19,14 @@ public class PlayerController : MonoBehaviour {
 	public TakePicture takePicture;
 	
 	public bool isOnSafari = true;
+    public bool setup = false;
 
 	// Update is called once per frame
 	void Update () {
+        if(!setup)
+		    isOnSafari = Application.loadedLevelName.Equals("PictureAnalysis") ? false : true;
 
-		isOnSafari = Application.loadedLevelName.Equals("PictureAnalysis") ? false : true;
-
-		if(!isOnSafari)
+		if(!isOnSafari && !setup)
 			pictureAnalysisSetup();
 
 		if(Cardboard.SDK.Triggered) {
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 				takePicture.takePicture();
 			else if(canShootDart && isOnSafari) {
 				dartController.createProjectile();
-			}
+			} 
 
 		}
 			
@@ -56,11 +57,18 @@ public class PlayerController : MonoBehaviour {
 		transform.position = new Vector3(0,0,0);
 		transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
 		GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        setup = true;
+        GetComponent<Autowalk>().enabled = false;
+        GameObject.Find("Switch Item Button").active = false;
 	}
 
     public void loseShot()
     {
         takePicture.filmUsed++;
+        takePicture.updateFilmText();
+        takePicture.ruinFilm();
+
     }
 
 }
