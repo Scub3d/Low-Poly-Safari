@@ -26,6 +26,7 @@ public class TakePicture : MonoBehaviour {
 
     public SendPictureToServer spts;
 
+    public UnityEngine.UI.Image flash;
 
     public void takePicture() {
 		if(unlocked && animalInShot && filmUsed < pictureFrames.Length - 1) {
@@ -77,12 +78,20 @@ public class TakePicture : MonoBehaviour {
 	}
 
 	IEnumerator EndScene() {
-		yield return new WaitForSeconds(.5f);
+		yield return new WaitForSeconds(.3f);
 		Application.LoadLevel("PictureAnalysis");
 	}
 
-	
-	IEnumerator TakeSnapshot(int width, int height) { 
+
+    IEnumerator Flash()
+    {
+        flash.enabled = true;
+        yield return new WaitForSeconds(.1f);
+        flash.enabled = false;
+    }
+
+
+    IEnumerator TakeSnapshot(int width, int height) { 
 		yield return new WaitForEndOfFrame();
 
 		Texture2D texture = new Texture2D (width / 2, height, TextureFormat.RGB24, true); 
@@ -90,11 +99,11 @@ public class TakePicture : MonoBehaviour {
 
 		texture.Apply(); 
 		pictureFrames[filmUsed].GetComponent<Renderer>().material.mainTexture = texture;
-        //spts.selectedPicture = pictureFrames[filmUsed];
-       // spts.breakShit();
-	} 
+        StartCoroutine(Flash());
+
+    }
 
 
-	
+
 
 }
