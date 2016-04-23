@@ -17,7 +17,7 @@ public class SendPictureToServer : MonoBehaviour {
             byte[] bytes = texmex.EncodeToPNG();
             string b64 = Convert.ToBase64String(bytes);
 
-            string url = "http://scub3d.net:7788/addImage";
+            string url = "http://scub3d.net:7788/lowpoly/addImage";
       
             WebClient myWebClient = new WebClient();
 

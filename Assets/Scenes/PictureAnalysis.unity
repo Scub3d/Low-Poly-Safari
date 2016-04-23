@@ -169,7 +169,11 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1524368851}
-  m_Text: Thanks for playing!
+  m_Text: 'Thanks for playing!
+
+    Check out other safari photos at
+
+    scub3d.net:7788/lowpoly/'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
