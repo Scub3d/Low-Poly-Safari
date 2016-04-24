@@ -86,7 +86,7 @@ public class TakePicture : MonoBehaviour {
     IEnumerator Flash()
     {
         flash.enabled = true;
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.2f);
         flash.enabled = false;
     }
 

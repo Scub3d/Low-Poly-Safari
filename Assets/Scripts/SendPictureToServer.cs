@@ -9,6 +9,7 @@ public class SendPictureToServer : MonoBehaviour {
 
 
     public GameObject selectedPicture;
+    public string uname;
 
     public void breakShit() {
         if(selectedPicture != null)
@@ -17,13 +18,15 @@ public class SendPictureToServer : MonoBehaviour {
             byte[] bytes = texmex.EncodeToPNG();
             string b64 = Convert.ToBase64String(bytes);
 
-            string url = "http://scub3d.net:7788/lowpoly/addImage";
+            uname = GameObject.Find("NameHolder").GetComponent<lastOneIPromise>().nh.getName();
+
+            string url = "http://scub3d.net/lowpoly/addImage";
       
             WebClient myWebClient = new WebClient();
 
             myWebClient.Encoding = Encoding.UTF8;
             myWebClient.Headers.Add("Content-Type", "text/json");
-            string responsebody = myWebClient.UploadString(url, "POST", "{\"base64\":\"" + b64 + "\"}");
+            string responsebody = myWebClient.UploadString(url, "POST", "{\"uname\":\"" + uname + "\", \"base64\":\"" + b64 + "\"}");
 
             hideAll();
 
